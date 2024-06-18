@@ -2,16 +2,6 @@
 
 # Making arbitrage between Uniswap V2 and Sushiswap
 
-## Index
-+ [What its included in this repo?](https://github.com/jeff1010-web/uniswap-sushiswap-arbitrage-bot#what-its-included-in-this-repo)
-+ [Installation](https://github.com/jeff1010-web/uniswap-sushiswap-arbitrage-bot#installation)
-+ [Running the demo](https://github.com/jeff1010-web/uniswap-sushiswap-arbitrage-bot#running-the-demo)
-+ [Running on a ethereum network](https://github.com/jeff1010-web/uniswap-sushiswap-arbitrage-bot#running-on-a-ethereum-network)
-+ [Notes](https://github.com/jeff1010-web/uniswap-sushiswap-arbitrage-bot#notes)
-+ [Considerations for production](https://github.com/jeff1010-web/uniswap-sushiswap-arbitrage-bot#considerations-for-production)
-+ [Useful resources](https://github.com/jeff1010-web/uniswap-sushiswap-arbitrage-bot#useful-resources)
-+ [License](https://github.com/jeff1010-web/uniswap-sushiswap-arbitrage-bot#license)
-
 ## What its included in this repo?
 
 1) Two bots written in JS that observe the prices changes on a pre user-defined liquidity pool at Uniswap V2 / Sushiswap and determine if its possibly to make a profit buying tokens cheaper at one exchange to selling them after for a bigger amount in the other, keeping the difference (profit). They only differ in how they get the tokens for making the arbitrage. One bot uses **flashswap**, this kind of swaps basically works as if you were taking a ‘free of charge' loan (no fee associated like normal loans works on 'real banks') to borrow the token needed to do the trade, repaying then the loan with some of the tokens you received, keeping the remaining to you. The other uses **normal swaps**, this bot require you to be holding the tokens needed to do the trade but it contrast it cost less gas to execute. In both cases Uniswap, like all the others exchanges, charges on you a fee for using their services (swapping tokens in this case), this fee currently is 0.3%. To see more on how flashswap or normal swaps works visit the [Uniswap docs](https://uniswap.org/docs/v2/).
